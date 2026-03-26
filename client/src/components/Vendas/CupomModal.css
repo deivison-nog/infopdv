@@ -1,0 +1,67 @@
+/* Estilos para visualização na tela (Não mexer) */
+.cupom-modal { max-width: 500px; }
+.cupom-modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.cupom-preview {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================
+   CONFIGURAÇÃO DE IMPRESSÃO - RESOLUÇÃO DO PROBLEMA
+   ============================================================ */
+@media print {
+  /* 1. Esconde absolutamente tudo: Modal, Overlay, Sidebar, Header */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* 2. Reseta as configurações da página e papel */
+  @page {
+    size: 58mm auto; /* Deixe auto para o driver gerenciar o comprimento */
+    margin: 0 !important;
+  }
+
+  /* 3. Garante que o cupom e seus filhos fiquem visíveis */
+  .cupom-termico,
+  .cupom-termico * {
+    visibility: visible !important;
+  }
+
+  /* 4. O PULO DO GATO: Arranca o cupom do modal e joga no topo do papel */
+  .cupom-termico {
+    position: fixed !important; /* Fixed faz ele ignorar o scroll do modal */
+    top: 0 !important;
+    left: 0 !important;
+    width: 58mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 2mm !important;
+    background: white !important;
+    z-index: 9999999 !important;
+    display: block !important;
+  }
+
+  /* 5. Limpa margens do HTML/Body que causam as folhas extras */
+  html, body {
+    width: 58mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  /* 6. Remove qualquer elemento indesejado que o visibility não pegou */
+  .modal-overlay, .modal-content, .modal-body, .page-header, .vendas-stats {
+    display: none !important;
+  }
+}

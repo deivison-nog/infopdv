@@ -1,0 +1,97 @@
+:root {
+  /* Cores Info PDV baseadas no logo */
+  --primary-blue: #1976D2;
+  --primary-blue-light: #2196F3;
+  --primary-blue-dark: #0D47A1;
+  
+  --secondary-green: #4CAF50;
+  --secondary-green-light: #81C784;
+  --secondary-green-dark: #388E3C;
+  
+  --accent-orange: #FF9800;
+  --accent-orange-light: #FFB74D;
+  --accent-orange-dark: #F57C00;
+  
+  /* Grays */
+  --gray-50: #FAFAFA;
+  --gray-100: #F5F5F5;
+  --gray-200: #EEEEEE;
+  --gray-300: #E0E0E0;
+  --gray-400: #BDBDBD;
+  --gray-500: #9E9E9E;
+  --gray-600: #757575;
+  --gray-700: #616161;
+  --gray-800: #424242;
+  --gray-900: #212121;
+  
+  /* Status colors */
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --error: #F44336;
+  --info: #2196F3;
+  
+  /* Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --bg-dark: #263238;
+  
+  /* Text */
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --text-white: #FFFFFF;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}

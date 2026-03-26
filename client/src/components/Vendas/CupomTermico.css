@@ -1,0 +1,205 @@
+/* ============================================================
+   ESTILO DO CUPOM (VISUALIZAÇÃO E ESTRUTURA)
+   ============================================================ */
+.cupom-termico {
+  width: 58mm;
+  max-width: 58mm;
+  background: white;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 8px;
+  line-height: 1.1;
+  padding: 2mm;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.cupom-header {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.empresa-nome {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.empresa-info {
+  font-size: 7px;
+  line-height: 1.2;
+}
+
+.cupom-linha {
+  font-size: 6px;
+  margin: 2px 0;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: 1px dashed #000;
+  height: 1px;
+}
+
+.cupom-titulo {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 3px 0;
+}
+
+.cupom-info {
+  font-size: 7px;
+  margin: 3px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1px 0;
+}
+
+.info-row span:first-child {
+  font-weight: bold;
+}
+
+.cupom-itens {
+  margin: 3px 0;
+}
+
+.itens-header {
+  display: flex;
+  font-size: 6px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  border-bottom: 1px dashed #000;
+  padding-bottom: 1px;
+}
+
+.col-desc { flex: 1; }
+.col-qtd { width: 30px; text-align: center; }
+.col-valor { width: 50px; text-align: right; }
+
+.item-grupo {
+  margin: 3px 0;
+  font-size: 7px;
+}
+
+.item-linha1 {
+  display: flex;
+  gap: 3px;
+  font-weight: bold;
+}
+
+.item-numero { min-width: 12px; }
+.item-nome { flex: 1; text-transform: uppercase; }
+
+.item-linha2 {
+  font-size: 6px;
+  color: #333;
+  margin-left: 15px;
+}
+
+.item-linha3 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-top: 1px;
+}
+
+.item-qtd { font-size: 6px; }
+.item-subtotal { font-weight: bold; }
+
+.cupom-totais {
+  margin: 3px 0;
+  font-size: 8px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1px 0;
+}
+
+.total-final {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 3px;
+  padding-top: 2px;
+  border-top: 1px solid #000;
+}
+
+.cupom-pagamento {
+  margin: 3px 0;
+  font-size: 8px;
+}
+
+.pag-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1px 0;
+}
+
+.cupom-footer {
+  text-align: center;
+  margin-top: 4px;
+  font-size: 7px;
+}
+
+.footer-msg { font-weight: bold; }
+
+/* ============================================================
+   CONFIGURAÇÃO DE IMPRESSÃO - CORREÇÃO DEFINITIVA
+   ============================================================ */
+@media print {
+  /* 1. Define o tamanho do papel */
+  @page {
+    size: 58mm auto;
+    margin: 0 !important;
+  }
+
+  /* 2. Remove o bloqueio de exibição de todos os pais */
+  /* Precisamos que os pais existam para o filho aparecer */
+  html, body, #root, .layout-container, .modal-overlay, .modal-content, .modal-body, .cupom-preview {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 58mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important; /* Remove centralização de modais */
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* 3. Esconde o que é lixo (Header, Sidebar, Botões) */
+  nav, aside, header, footer, button, .page-header, .vendas-stats, .filtros-rapidos, .filtros-avancados, .pagination, .vendas-lista {
+    display: none !important;
+  }
+
+  /* 4. O Cupom - Forçamos ele para o topo absoluto */
+  .cupom-termico {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 58mm !important;
+    padding: 2mm !important;
+    background: white !important;
+    z-index: 9999999 !important;
+  }
+
+  /* 5. Garante que os textos apareçam e as linhas flex funcionem */
+  .cupom-termico * {
+    visibility: visible !important;
+    color: black !important;
+  }
+
+  .info-row, .itens-header, .item-linha1, .item-linha3, .total-row, .pag-row {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+}

@@ -1,0 +1,24 @@
+.layout {
+  min-height: 100vh;
+  background: var(--gray-50);
+}
+
+.layout-content {
+  min-height: calc(100vh - 70px);
+}
+
+.layout-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+@media (max-width: 968px) {
+  .layout-content {
+    min-height: calc(100vh - 60px);
+  }
+  
+  .layout-container {
+    padding: 20px 16px;
+  }
+}

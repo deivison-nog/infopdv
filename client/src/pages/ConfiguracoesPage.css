@@ -1,0 +1,293 @@
+/* Cabeçalho */
+.page-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Abas */
+.config-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--gray-200);
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--primary-blue);
+  background: var(--gray-50);
+}
+
+.tab-btn.active {
+  color: var(--primary-blue);
+  border-bottom-color: var(--primary-blue);
+}
+
+/* Formulário */
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-section h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 700;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Textarea */
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Checkbox */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.checkbox-label:hover {
+  background: var(--gray-100);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.checkbox-label span {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* Preview */
+.config-preview {
+  background: var(--gray-50);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--gray-300);
+}
+
+.config-preview h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.preview-box {
+  background: white;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Info Box */
+.config-info {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #E3F2FD;
+  border-left: 4px solid var(--primary-blue);
+  border-radius: var(--radius-md);
+}
+
+.info-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.info-text {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.info-text strong {
+  color: var(--primary-blue);
+}
+
+/* Sistema */
+.sistema-info {
+  display: grid;
+  gap: 16px;
+}
+
+.sistema-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--gray-200);
+}
+
+.sistema-icon {
+  font-size: 32px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.sistema-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.sistema-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sistema-value {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Ações do Sistema */
+.sistema-acoes {
+  margin-top: 24px;
+}
+
+.sistema-acoes h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.acoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.acao-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: white;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.acao-btn:hover {
+  border-color: var(--primary-blue);
+  background: var(--gray-50);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.acao-icon {
+  font-size: 32px;
+}
+
+.acao-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* Loading */
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .page-header-actions {
+    width: 100%;
+  }
+  
+  .page-header-actions button {
+    flex: 1;
+  }
+  
+  .config-tabs {
+    gap: 4px;
+  }
+  
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .acoes-grid {
+    grid-template-columns: 1fr;
+  }
+}
