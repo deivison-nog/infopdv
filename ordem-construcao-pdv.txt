@@ -1,0 +1,525 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    📋 ORDEM DE CONSTRUÇÃO - PDV OFFLINE                      ║
+║                          Sistema Info PDV - Roadmap                          ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 1: CONFIGURAÇÃO INICIAL DO PROJETO (Semana 1)                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 1.1 - Setup do Repositório
+      └─ Criar repositório Git
+      └─ Configurar .gitignore
+      └─ Estruturar pastas do projeto
+      └─ Criar README.md inicial
+
+  ✅ 1.2 - Configuração do Backend
+      └─ Inicializar projeto Node.js/Express
+      └─ Instalar dependências (express, cors, dotenv, pg)
+      └─ Configurar estrutura MVC
+      └─ Setup do ESLint e Prettier
+
+  ✅ 1.3 - Configuração do Frontend  
+      └─ Criar projeto React com Vite
+      └─ Configurar estrutura de pastas
+      └─ Instalar dependências (react-router-dom, axios)
+      └─ Setup de variáveis CSS (cores Info PDV)
+
+  ✅ 1.4 - Banco de Dados
+      └─ Instalar PostgreSQL
+      └─ Criar database
+      └─ Configurar conexão
+      └─ Criar arquivo de environment (.env)
+
+  📦 Entregável: Estrutura base do projeto configurada
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 2: AUTENTICAÇÃO E USUÁRIOS (Semana 2)                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 2.1 - Database - Tabela Usuários
+      └─ Migration: create_usuarios.sql
+      └─ Seed: usuário admin inicial
+
+  ✅ 2.2 - Backend - API de Autenticação
+      └─ Model: Usuario.model.js
+      └─ Controller: auth.controller.js
+      └─ Routes: auth.routes.js
+      └─ Middleware: auth.middleware.js (JWT)
+      └─ Implementar bcrypt para senhas
+
+  ✅ 2.3 - Frontend - Tela de Login
+      └─ Página: LoginPage.jsx
+      └─ Context: AuthContext.jsx
+      └─ Hook: useAuth.js
+      └─ Guard: AuthGuard.jsx
+      └─ Estilização com cores Info PDV
+
+  ✅ 2.4 - Validações e Segurança
+      └─ Validação de formulários
+      └─ Tratamento de erros
+      └─ Tokens JWT
+      └─ Refresh tokens
+
+  📦 Entregável: Sistema de login funcionando
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 3: GESTÃO DE PRODUTOS (Semana 3)                                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 3.1 - Database - Produtos
+      └─ Migration: create_produtos.sql
+      └─ Migration: create_categorias.sql
+      └─ Seed: produtos iniciais
+
+  ✅ 3.2 - Backend - API de Produtos
+      └─ Model: Produto.model.js
+      └─ Controller: produtos.controller.js
+      └─ Routes: produtos.routes.js (CRUD completo)
+      └─ Validações de estoque
+
+  ✅ 3.3 - Frontend - Gestão de Produtos
+      └─ Page: ProdutosPage.jsx
+      └─ Component: ListaProdutos.jsx
+      └─ Component: FormProduto.jsx
+      └─ Component: ProdutoDetalhes.jsx
+      └─ Hook: useProdutos.js
+
+  ✅ 3.4 - Funcionalidades
+      └─ Busca/filtro de produtos
+      └─ Upload de imagens
+      └─ Controle de estoque
+      └─ Categorias
+
+  📦 Entregável: CRUD de produtos completo
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 4: SISTEMA DE VENDAS (Semana 4-5)                                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 4.1 - Database - Vendas
+      └─ Migration: create_vendas.sql
+      └─ Migration: create_itens_venda.sql
+      └─ Migration: create_formas_pagamento.sql
+
+  ✅ 4.2 - Backend - API de Vendas
+      └─ Model: Venda.model.js
+      └─ Model: ItemVenda.model.js
+      └─ Controller: vendas.controller.js
+      └─ Routes: vendas.routes.js
+      └─ Lógica de cálculo (subtotal, desconto, total)
+      └─ Baixa de estoque automática
+
+  ✅ 4.3 - Frontend - Tela de Vendas (Principal)
+      └─ Page: VendasPage.jsx
+      └─ Component: ProdutoCard.jsx
+      └─ Component: ProdutoGrid.jsx
+      └─ Component: SearchBar.jsx
+      └─ Component: FiltroCategoria.jsx
+
+  ✅ 4.4 - Frontend - Carrinho de Compras
+      └─ Component: Carrinho.jsx
+      └─ Component: CarrinhoItem.jsx
+      └─ Component: CarrinhoResumo.jsx
+      └─ Component: FormaPagamento.jsx
+      └─ Context: CarrinhoContext.jsx
+      └─ Hook: useCarrinho.js
+
+  ✅ 4.5 - Finalização de Venda
+      └─ Validações de estoque
+      └─ Cálculo de troco
+      └─ Impressão de cupom (opcional)
+      └─ Notificações de sucesso
+
+  📦 Entregável: Sistema de vendas online funcionando
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 5: FUNCIONALIDADE OFFLINE - PWA (Semana 6-7) 🔥 CRÍTICO               │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 5.1 - Configuração PWA
+      └─ Criar manifest.json
+      └─ Gerar ícones (72x72 até 512x512)
+      └─ Configurar vite-plugin-pwa
+      └─ Meta tags para PWA
+
+  ✅ 5.2 - Service Worker
+      └─ Criar service-worker.js
+      └─ Estratégia de cache (Cache First + Network First)
+      └─ Eventos: install, activate, fetch
+      └─ Configurar Workbox (opcional)
+
+  ✅ 5.3 - IndexedDB
+      └─ Service: indexedDB.js (manager)
+      └─ Store: produtos (cache local)
+      └─ Store: vendas (vendas offline)
+      └─ Store: syncQueue (fila de sincronização)
+      └─ Migrations para IndexedDB
+
+  ✅ 5.4 - Sincronização
+      └─ Service: syncManager.js
+      └─ Service: syncQueue.js
+      └─ Background Sync API
+      └─ Resolver conflitos
+      └─ Retry logic
+
+  ✅ 5.5 - Frontend - Offline UX
+      └─ Hook: useOnlineStatus.js
+      └─ Hook: useSync.js
+      └─ Component: StatusIndicator.jsx
+      └─ Notificações de status
+      └─ Badge de itens pendentes
+
+  ✅ 5.6 - Testes Offline
+      └─ Testar vendas offline
+      └─ Testar sincronização
+      └─ Testar reconexão
+      └─ Validar integridade dos dados
+
+  📦 Entregável: PDV funcionando 100% offline
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 6: SISTEMA DE ASSINATURAS E PAGAMENTO (Semana 8-9) 💳                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 6.1 - Database - Assinaturas
+      └─ Migration: create_assinaturas.sql
+      └─ Migration: create_pagamentos.sql
+      └─ Migration: create_planos.sql
+      └─ Seed: planos iniciais
+      └─ Alter: usuarios add assinatura_id
+
+  ✅ 6.2 - Backend - Mercado Pago Setup
+      └─ Criar conta Mercado Pago
+      └─ Obter credenciais (Access Token, Public Key)
+      └─ Instalar SDK: npm install mercadopago
+      └─ Config: mercadopago.js
+      └─ Service: mercadopago.service.js
+
+  ✅ 6.3 - Backend - API de Pagamentos
+      └─ Model: Assinatura.model.js
+      └─ Model: Pagamento.model.js
+      └─ Controller: pagamento.controller.js
+      └─ Service: assinatura.service.js
+      └─ Service: cobranca.service.js
+      └─ Routes: pagamento.routes.js
+
+  ✅ 6.4 - Backend - Webhooks Mercado Pago
+      └─ Controller: webhook.controller.js
+      └─ Routes: webhook.routes.js
+      └─ Middleware: mercadopago.middleware.js
+      └─ Service: webhookHandler.service.js
+      └─ Processar notificações de pagamento
+
+  ✅ 6.5 - Backend - Jobs Automatizados
+      └─ Job: verificarVencimentos.job.js
+      └─ Job: enviarAlertas.job.js
+      └─ Job: suspenderContas.job.js
+      └─ Configurar Cron (node-cron)
+
+  ✅ 6.6 - Backend - Middleware de Verificação
+      └─ Middleware: checkPagamento.middleware.js
+      └─ Integrar em rotas protegidas
+      └─ Lógica de tolerância (5 dias)
+
+  ✅ 6.7 - Frontend - Verificação no Login
+      └─ Atualizar AuthContext.jsx
+      └─ API: verificarStatusPagamento()
+      └─ Redirecionamento condicional
+
+  ✅ 6.8 - Frontend - Página de Pagamento
+      └─ Page: PagamentoPage.jsx
+      └─ Component: QRCodePix.jsx
+      └─ Component: StatusPagamento.jsx
+      └─ Component: CardPlano.jsx
+      └─ Hook: usePagamento.js
+      └─ Hook: usePollingPagamento.js
+
+  ✅ 6.9 - Frontend - Guard de Pagamento
+      └─ Guard: PagamentoGuard.jsx
+      └─ Integrar em rotas
+      └─ Context: PagamentoContext.jsx
+
+  ✅ 6.10 - Geração de QR Code PIX
+      └─ Service: pixQRCode.service.js
+      └─ Gerar via Mercado Pago API
+      └─ Exibir QR Code
+      └─ Copiar código PIX
+
+  ✅ 6.11 - Confirmação de Pagamento
+      └─ Page: ConfirmacaoPagamentoPage.jsx
+      └─ Polling de status (a cada 3s)
+      └─ WebSocket (opcional, real-time)
+      └─ Redirecionamento automático
+
+  📦 Entregável: Sistema de assinaturas completo
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 7: RELATÓRIOS E DASHBOARD (Semana 10)                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 7.1 - Backend - API de Relatórios
+      └─ Controller: relatorios.controller.js
+      └─ Service: analytics.service.js
+      └─ Routes: relatorios.routes.js
+      └─ Queries complexas (vendas por período, top produtos)
+
+  ✅ 7.2 - Frontend - Dashboard
+      └─ Page: RelatoriosPage.jsx
+      └─ Component: VendasDia.jsx
+      └─ Component: GraficoVendas.jsx
+      └─ Component: ResumoFinanceiro.jsx
+      └─ Library: Chart.js ou Recharts
+
+  ✅ 7.3 - Funcionalidades
+      └─ Vendas por período
+      └─ Produtos mais vendidos
+      └─ Ticket médio
+      └─ Faturamento
+      └─ Exportar PDF/Excel
+
+  📦 Entregável: Sistema de relatórios
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 8: MELHORIAS E UX (Semana 11)                                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 8.1 - Layout e Navegação
+      └─ Component: Header.jsx
+      └─ Component: Sidebar.jsx
+      └─ Component: MainLayout.jsx
+      └─ Responsividade mobile
+
+  ✅ 8.2 - Componentes Comuns
+      └─ Component: Button.jsx
+      └─ Component: Input.jsx
+      └─ Component: Modal.jsx
+      └─ Component: Toast.jsx
+      └─ Component: Loading.jsx
+
+  ✅ 8.3 - Identidade Visual Info PDV
+      └─ Aplicar cores do logo
+      └─ Ícones consistentes
+      └─ Animações suaves
+      └─ Feedback visual
+
+  ✅ 8.4 - Atalhos de Teclado
+      └─ F2: Nova venda
+      └─ F3: Buscar produto
+      └─ F5: Atualizar
+      └─ ESC: Cancelar
+
+  ✅ 8.5 - Notificações
+      └─ Toast messages
+      └─ Confirmações de ação
+      └─ Alertas de estoque baixo
+
+  📦 Entregável: UX polida
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 9: TESTES (Semana 12)                                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 9.1 - Testes Unitários
+      └─ Services (IndexedDB, Sync, Pagamento)
+      └─ Utils (formatters, validators)
+      └─ Hooks
+      └─ Coverage > 70%
+
+  ✅ 9.2 - Testes de Integração
+      └─ API endpoints
+      └─ Fluxo de vendas
+      └─ Sincronização
+      └─ Webhooks
+
+  ✅ 9.3 - Testes E2E
+      └─ Cypress ou Playwright
+      └─ Fluxo completo de venda
+      └─ Login e autenticação
+      └─ Pagamento
+
+  ✅ 9.4 - Testes de Performance
+      └─ Lighthouse (PWA score)
+      └─ Tempo de resposta
+      └─ Cache effectiveness
+
+  ✅ 9.5 - Testes Manuais
+      └─ Venda offline
+      └─ Sincronização após reconexão
+      └─ Pagamento via PIX
+      └─ Multi-dispositivos
+
+  📦 Entregável: Aplicação testada
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 10: DEPLOY E PRODUÇÃO (Semana 13)                                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ 10.1 - Preparação
+      └─ Environment variables produção
+      └─ Build otimizado
+      └─ Minificação
+      └─ Compressão de assets
+
+  ✅ 10.2 - Backend Deploy
+      └─ Servidor: VPS, Heroku ou Railway
+      └─ Database: PostgreSQL (produção)
+      └─ SSL/HTTPS obrigatório
+      └─ PM2 para gerenciar processo
+
+  ✅ 10.3 - Frontend Deploy
+      └─ Vercel, Netlify ou Cloudflare Pages
+      └─ CDN para assets
+      └─ Service Worker em produção
+
+  ✅ 10.4 - Configuração Mercado Pago
+      └─ Credenciais de produção
+      └─ Webhook URL em produção
+      └─ Testar pagamentos reais
+
+  ✅ 10.5 - Domínio
+      └─ Registrar domínio
+      └─ Configurar DNS
+      └─ Certificado SSL
+
+  ✅ 10.6 - Monitoramento
+      └─ Logs (Winston, Morgan)
+      └─ Error tracking (Sentry)
+      └─ Uptime monitoring
+
+  ✅ 10.7 - Backup
+      └─ Backup automático database
+      └─ Backup de configurações
+      └─ Plano de recuperação
+
+  📦 Entregável: Sistema em produção
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  FASE 11: PÓS-LANÇAMENTO (Contínuo)                                         │
+└─────────────────────��────────────────────────────────────────────────────────┘
+
+  ✅ 11.1 - Documentação
+      └─ Manual do usuário
+      └─ Documentação técnica
+      └─ API docs (Swagger)
+      └─ Vídeos tutoriais
+
+  ✅ 11.2 - Suporte
+      └─ Sistema de tickets
+      └─ FAQ
+      └─ Chat de suporte
+
+  ✅ 11.3 - Melhorias Contínuas
+      └─ Feedback dos usuários
+      └─ Novas features
+      └─ Correção de bugs
+      └─ Otimizações
+
+  📦 Entregável: Sistema mantido
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           📊 RESUMO DO CRONOGRAMA                            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  Semana 1:    Setup inicial
+  Semana 2:    Autenticação
+  Semana 3:    Produtos
+  Semana 4-5:  Vendas
+  Semana 6-7:  Offline/PWA ⭐
+  Semana 8-9:  Pagamentos 💳
+  Semana 10:   Relatórios
+  Semana 11:   UX/Melhorias
+  Semana 12:   Testes
+  Semana 13:   Deploy
+
+  ⏱️  TOTAL: ~3 meses (13 semanas)
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           🎯 PRIORIDADES CRÍTICAS                            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  🔥 ALTA PRIORIDADE:
+     1. Sistema de Vendas (core do negócio)
+     2. Funcionalidade Offline (diferencial)
+     3. Sincronização confiável
+     4. Sistema de Pagamentos (monetização)
+
+  ⚠️  MÉDIA PRIORIDADE:
+     5. Relatórios
+     6. UX/Melhorias visuais
+     7. Atalhos de teclado
+
+  ℹ️  BAIXA PRIORIDADE (Nice to have):
+     8. Impressão de cupom
+     9. Múltiplos temas
+     10. Integração com outros gateways
+
+
+╔═══════════════════════════════════════════════���══════════════════════════════╗
+║                          🛠️  STACK TECNOLÓGICO FINAL                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  Frontend:
+    ✓ React 18
+    ✓ React Router DOM
+    ✓ Axios
+    ✓ IndexedDB
+    ✓ Workbox (Service Worker)
+    ✓ Chart.js / Recharts
+    ✓ QRCode.js
+
+  Backend:
+    ✓ Node.js + Express
+    ✓ PostgreSQL
+    ✓ JWT (autenticação)
+    ✓ Bcrypt (senhas)
+    ✓ Mercado Pago SDK
+    ✓ Node-Cron (jobs)
+
+  DevOps:
+    ✓ Git/GitHub
+    ✓ Docker (opcional)
+    ✓ PM2
+    ✓ Nginx (reverse proxy)
+
+  Testes:
+    ✓ Vitest / Jest
+    ✓ Cypress / Playwright
+    ✓ Supertest (API)
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           ✅ CHECKLIST DE CONCLUSÃO                          ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  [ ] Login funcional (online + offline)
+  [ ] CRUD de Produtos
+  [ ] Vendas online funcionando
+  [ ] Vendas offline funcionando
+  [ ] Sincronização automática
+  [ ] PWA instalável
+  [ ] Cache offline de produtos
+  [ ] Verificação de pagamento no login
+  [ ] Geração de QR Code PIX
+  [ ] Webhook Mercado Pago recebendo
+  [ ] Jobs de verificação rodando
+  [ ] Relatórios básicos
+  [ ] Testes > 70% coverage
+  [ ] Deploy em produção
+  [ ] SSL configurado
+  [ ] Backup automatizado
+  [ ] Documentação completa
+
+  🎉 SISTEMA PRONTO PARA LANÇAMENTO!
